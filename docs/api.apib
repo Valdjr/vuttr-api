@@ -1,0 +1,117 @@
+FORMAT: 1A
+HOST: http://localhost:3000
+
+# VUTTR
+Very Useful Tools to Remember.
+
+# Group Tools
+This section groups tool resources.
+
+## Tool [/tools/{tool_id}]
+A Tool is the central object utilized.
+
++ Parameters
+    + tool_id: `1` (string) - The id of the Tool.
+
++ Model (application/json)
+
+    ```js
+    {
+        "id": 1,
+        "title": "Notion",
+        "link": "https://notion.so",
+        "description": "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized. ",
+        "tags": [
+            "organization",
+            "planning",
+            "collaboration",
+            "writing",
+            "calendar"
+        ]
+    }
+    ```
+
+### Retrieve a Tool [GET]
+Returns a specific Tool.
+
++ Response 200
+
+    [Tool][]
+
+### Delete a Tool [DELETE]
+Delete a Tool.
+
++ Response 204
+
+## Tools Collection [/tools{?tag}]
+A Collection of tools.
+
++ Model (application/json)
+
+    ```js
+    [
+        {
+            "id": 1, // ou qualquer outro identificador
+            "title": "Notion",
+            "link": "https://notion.so",
+            "description": "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized. ",
+            "tags": [
+                "organization",
+                "planning",
+                "collaboration",
+                "writing",
+                "calendar"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "json-server",
+            "link": "https://github.com/typicode/json-server",
+            "description": "Fake REST API based on a json schema. Useful for mocking and creating APIs for front-end devs to consume in coding challenges.",
+            "tags": [
+                "api",
+                "json",
+                "schema",
+                "node",
+                "github",
+                "rest"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "fastify",
+            "link": "https://www.fastify.io/",
+            "description": "Extremely fast and simple, low-overhead web framework for NodeJS. Supports HTTP2.",
+            "tags": [
+                "web",
+                "framework",
+                "node",
+                "http2",
+                "https",
+                "localhost"
+            ]
+        }
+    ]
+    ```
+
+### Create a Tool [POST]
+Create a new Tool object.
+
++ Request
+
+    [Tool][]
+
++ Response 201
+
+    [Tool][]
+
+### Retrieve all Tools [GET]
+Retrieves all tools.
+
++ Parameters
+
+    + tag (string, optional) - Search for tools within this tag.
+
++ Response 200
+
+    [Tools Collection][]
