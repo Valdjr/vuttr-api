@@ -1,4 +1,11 @@
-## instalção e execução
+## Instalação
+`npm install`
 
-Instalar dependências: `npm install`
-Iniciar API: `npm start`
+## Execução
+`npm start`
+
+## Testes
+`npm run test`
+
+## Documentação
+Na pasta docs, abra o arquivo `api.html` no seu navegador.
